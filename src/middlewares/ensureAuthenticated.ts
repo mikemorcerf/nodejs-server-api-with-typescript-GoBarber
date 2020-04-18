@@ -17,7 +17,7 @@ export default function ensureAuthenticated(
 	const authHeader = request.headers.authorization;
 
 	if (!authHeader) {
-		throw new Error('Authentication token is missing');
+		throw new Error('Authentication token is missing.');
 	}
 
 	const [, token] = authHeader.split(' ');
@@ -33,6 +33,6 @@ export default function ensureAuthenticated(
 
 		return next();
 	} catch {
-		throw new Error('Invalid authentication token');
+		throw new Error('Invalid authentication token.');
 	}
 }
