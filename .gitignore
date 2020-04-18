@@ -1,3 +1,6 @@
 node_modules
 ormconfig.json
-src/config
+src/config/auth.ts
+
+tmp/*
+!tmp/.gitkeep
