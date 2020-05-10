@@ -30,7 +30,7 @@ class ResetPasswordService {
 
 		if (!userToken) {
 			throw new AppError(
-				'Invalid token. Token might be expired or it does not exist.',
+				'Invalid token. Token might be expired or it does not exist',
 			);
 		}
 
@@ -45,9 +45,7 @@ class ResetPasswordService {
 
 		// Token expires after 2 hours upon ResetPassword request
 		if (isAfter(Date.now(), compareDate)) {
-			throw new AppError(
-				'Expired token. Please generate a new request to reset password.',
-			);
+			throw new AppError('Expired token');
 		}
 
 		user.password = await this.hashProvider.generateHash(password);
