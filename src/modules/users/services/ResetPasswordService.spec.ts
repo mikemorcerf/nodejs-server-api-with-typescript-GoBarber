@@ -91,8 +91,3 @@ describe('ResetPassword', () => {
 		).rejects.toBeInstanceOf(AppError);
 	});
 });
-
-// Hash
-// 2 hour expiration
-// UserToken does not exist
-// User does not exist
