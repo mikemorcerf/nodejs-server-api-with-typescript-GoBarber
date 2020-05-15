@@ -6,7 +6,8 @@
     "rootDir": "./src",
     "strict": true,
     "strictPropertyInitialization": false,
-    "baseUrl": "./src",
+		"baseUrl": "./src",
+		"allowJs": true,
     "paths": {
 			"@modules/*": ["modules/*"],
 			"@config/*": ["config/*"],
@@ -15,6 +16,6 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
   }
 }
