@@ -1,5 +1,5 @@
 import { injectable, inject } from 'tsyringe';
-import { getDaysInMonth, getDate } from 'date-fns';
+import { getDaysInMonth, getDate, isAfter } from 'date-fns';
 
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
 
@@ -41,6 +41,8 @@ class ListProviderMonthAvailabilityService {
 			(_, index) => index + 1,
 		);
 
+		const currentDate = new Date(Date.now());
+
 		const availabilityOfDaysInMonth = eachDayArray.map(day => {
 			const appointmentsInDay = appointmentsInMonthFromProvider.filter(
 				appointment => {
@@ -48,9 +50,12 @@ class ListProviderMonthAvailabilityService {
 				},
 			);
 
+			const compareDate = new Date(year, month - 1, day);
+
 			return {
 				day,
-				available: appointmentsInDay.length < 10,
+				available:
+					appointmentsInDay.length < 10 && isAfter(compareDate, currentDate),
 			};
 		});
 
