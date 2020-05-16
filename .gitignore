@@ -7,7 +7,6 @@ temp/
 coverage/
 
 ormconfig.json
-src/config/auth.ts
 
 tmp/*
 !tmp/.gitkeep
