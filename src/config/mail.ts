@@ -14,7 +14,7 @@ export default {
 
 	defaults: {
 		from: {
-			email: 'contact@michaeldemorcerfemoura.com',
+			email: process.env.MAIL_FROM_EMAIL,
 			name: 'Michael from GoBarber',
 		},
 	},
