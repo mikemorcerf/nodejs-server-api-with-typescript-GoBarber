@@ -1,21 +1,25 @@
 import AppError from '@shared/errors/AppError';
 
 import FakeNotificationsRepository from '@modules/notifications/repositories/fakes/FakeNotificationsRepository';
+import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeCacheProvider';
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
 import CreateAppointmentService from './CreateAppointmentService';
 
 let fakeNotificationsRepository: FakeNotificationsRepository;
 let fakeAppointmentsRepository: FakeAppointmentsRepository;
 let createAppointment: CreateAppointmentService;
+let fakeCacheProvider: FakeCacheProvider;
 
 describe('CreateAppointment', () => {
 	beforeEach(() => {
 		fakeAppointmentsRepository = new FakeAppointmentsRepository();
 		fakeNotificationsRepository = new FakeNotificationsRepository();
+		fakeCacheProvider = new FakeCacheProvider();
 
 		createAppointment = new CreateAppointmentService(
 			fakeAppointmentsRepository,
 			fakeNotificationsRepository,
+			fakeCacheProvider,
 		);
 	});
 
@@ -120,7 +124,7 @@ describe('CreateAppointment', () => {
 
 		expect(createNotification).toHaveBeenCalledWith({
 			recipient_id: 'provider_id',
-			content: 'New appointment scheduled for 05/10/2020 at 12:00h',
+			content: 'New appointment scheduled for May 5th at 12:00h',
 		});
 	});
 });
