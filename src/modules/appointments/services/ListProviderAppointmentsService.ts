@@ -36,6 +36,8 @@ class ListProviderAppointmentsService {
 			},
 		);
 
+		// await this.cacheProvider.save('test key', 'test value');
+
 		return appointments;
 	}
 }
