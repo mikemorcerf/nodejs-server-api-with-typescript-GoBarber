@@ -50,7 +50,7 @@ class ListProviderMonthAvailabilityService {
 				},
 			);
 
-			const compareDate = new Date(year, month - 1, day);
+			const compareDate = new Date(year, month - 1, day, 17, 1, 0);
 
 			return {
 				day,
