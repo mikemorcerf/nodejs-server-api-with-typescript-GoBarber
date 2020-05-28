@@ -16,12 +16,7 @@ import '@shared/container';
 
 const app = express();
 
-//Set up Access-Control-Expose-Headers for cors requests so clients can see total logs in db
-var corsOptions = {
-  exposedHeaders: 'Access-Control-Allow-Origin'
-}
-
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.uploadsFolder));
 app.use(rateLimiter);
