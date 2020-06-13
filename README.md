@@ -19,6 +19,7 @@
 * [Technologies](#wrench-technologies)
 * [Features](#rocket-features)
 * [Installation and Getting started](#construction_worker-installation-and-getting-started)
+* [How to Use](#feet-how-to-use)
 * [Found a bug? Missing a specific feature?](#bug-issues)
 * [Acknowledgment](#clap-acknowledgment)
 * [License](#closed_book-license)
@@ -76,6 +77,14 @@ $ yarn install
 # Start the backend server
 $ yarn dev:start
 ```
+
+# :feet: How to Use
+
+GoBarber is currently under development. [Watch a demo video](https://www.youtube.com/watch?v=YnjSpmHbaB8&feature=youtu.be)
+Please check back later for more information.
+<p align="center">
+   <img alt="gobarber is under contruction" src="https://res.cloudinary.com/mikemoura/image/upload/v1592068093/under_construction_jacyru.png"/>
+</p>
 
 # :bug: Issues
 
