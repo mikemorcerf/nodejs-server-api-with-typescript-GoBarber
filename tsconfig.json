@@ -2,9 +2,12 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./src",
     "strict": true,
+		"esModuleInterop": true,
+		//"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"outDir": "./dist",
+    "rootDir": "./src",
     "strictPropertyInitialization": false,
 		"baseUrl": "./src",
 		"allowJs": true,
@@ -13,9 +16,19 @@
 			"@config/*": ["config/*"],
 			"@shared/*": ["shared/*"]
 		},
-    "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-		"forceConsistentCasingInFileNames": true
-  }
+	},
+	"include": [
+		"src/**/*"
+	],
+	"exclude": [
+		"node_modules",
+		"bower_components",
+		"jspm_packages",
+		"tmp",
+		"dist",
+		"jest.config.js",
+		"prettier.config.js"
+	]
 }
